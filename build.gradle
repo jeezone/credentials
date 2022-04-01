@@ -1,0 +1,25 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.5.10'
+    id 'java'
+}
+
+group 'one.jeez.wallet'
+version '1.0-SNAPSHOT'
+
+repositories {
+    maven {
+        url System.getenv('MAVEN_REPO')
+    }
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.xerial:sqlite-jdbc:3.36.0.3"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+
+    implementation "org.web3j:core:4.9.0"
+}
+
+test {
+    useJUnitPlatform()
+}
